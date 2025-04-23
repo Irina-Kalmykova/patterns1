@@ -23,14 +23,14 @@ class CardDeliveryTest {
 
     @Test
     @DisplayName("Should successful plan meeting")
-    void shouldSuccessfulMeeting() {
+    void shouldSuccessfulPlanMeeting() {
         var validUser = DataGenerator.Registration.generateUser("ru");
-        var daysToAddForFirstMeeting = 7;
+        var daysToAddForFirstMeeting = 4;
         var firstMeetingDate = DataGenerator.generateDate(daysToAddForFirstMeeting);
         var daysToAddForSecondMeeting = 10;
         var secondMeetingDate = DataGenerator.generateDate(daysToAddForSecondMeeting);
 
-        $("[data-test-id='city'] input").setValue(validUser.getCity());
+        $("[data-test-id=city] input").setValue(validUser.getCity());
         $("[data-test-id=date] input").doubleClick().sendKeys(Keys.DELETE);
         $("[data-test-id='date'] input").setValue(firstMeetingDate);
         $("[data-test-id='name'] input").setValue(validUser.getName());
